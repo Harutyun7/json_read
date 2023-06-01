@@ -1,0 +1,9 @@
+#!/bin/bash
+
+value=`cat /home/test1/info.json |sed -n 's|.*"vesion":"\([^"]*\)".*|\1|p'`
+echo "$value"
+
+if  [ "$value" -ne "1" ]
+then
+    /home/docker/print1.sh
+fi
